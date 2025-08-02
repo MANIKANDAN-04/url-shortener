@@ -150,15 +150,4 @@ This implementation covers the complete spectrum of system design topics typical
 
 ## Sample Images:
 
-<img width="1914" height="1001" alt="login" src="https://github.com/user-attachments/assets/6860248e-b580-4c96-bc40-cf2ef6cf903b" />
-
-<img width="1914" height="1001" alt="register" src="https://github.com/user-attachments/assets/16d4286b-410b-4a8d-9961-7f36448f4c69" />
-
 <img width="1899" height="1053" alt="creatingshortlink2" src="https://github.com/user-attachments/assets/2f127787-52f7-4f8b-b560-b3aaa6687870" />
-
-<img width="1910" height="804" alt="myurls" src="https://github.com/user-attachments/assets/ad60a006-00e3-45b8-a22d-7d34daf34b20" />
-
-<img width="1060" height="1072" alt="analytics" src="https://github.com/user-attachments/assets/fae11e23-6128-4e76-8e21-de0a100c955e" />
-
-
-
