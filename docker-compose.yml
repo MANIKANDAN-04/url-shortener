@@ -1,0 +1,64 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: url_shortener_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: urlshortener
+      MYSQL_USER: appuser
+      MYSQL_PASSWORD: apppassword
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - url_shortener_network
+
+  redis:
+    image: redis:7-alpine
+    container_name: url_shortener_redis
+    ports:
+      - "6380:6379"
+    networks:
+      - url_shortener_network
+
+  backend:
+    build: ./backend
+    container_name: url_shortener_backend
+    ports:
+      - "8001:8000"
+    environment:
+      DATABASE_URL: mysql+pymysql://appuser:apppassword@mysql:3306/urlshortener
+      REDIS_URL: redis://redis:6379
+    depends_on:
+      - mysql
+      - redis
+    networks:
+      - url_shortener_network
+
+  frontend:
+    build: ./frontend
+    container_name: url_shortener_frontend
+    ports:
+      - "3001:3000"
+    depends_on:
+      - backend
+    networks:
+      - url_shortener_network
+
+  nginx:
+    image: nginx:alpine
+    container_name: url_shortener_nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - frontend
+      - backend
+    networks:
+      - url_shortener_network
+
+networks:
+  url_shortener_network:
+    driver: bridge
