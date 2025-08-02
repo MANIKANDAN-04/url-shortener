@@ -6,7 +6,9 @@
 [![System Design Ready](https://img.shields.io/badge/System%20Design-Ready-brightgreen)](https://github.com/yourusername/url-shortener)
 [![Architecture](https://img.shields.io/badge/Microservices-Scalable-orange)](https://github.com/yourusername/url-shortener)
 
-This project demonstrates **enterprise-level system design concepts** commonly for development teams. 
+This project demonstrates **enterprise-level system design concepts** commonly for development teams.
+
+> ⚠️ **Note:** This project is for **demonstration purposes only** and is designed to run **locally** using Docker. It is **not production-ready** and should not be deployed to a public environment without proper security and configuration adjustments.
 
 ## 🚀 Quick Start (Single Command)
 
